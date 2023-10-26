@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Form Filler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="pdfForm">
+        <label for="pdfFile">Select a PDF:</label>
+        <input type="file" name="pdfFile" id="pdfFile" accept=".pdf" required>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+        
+        <input type="submit" value="Generate PDF">
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
