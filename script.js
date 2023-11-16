@@ -31,4 +31,17 @@ document.getElementById('pdfForm').addEventListener('submit', async function(eve
     link.href = URL.createObjectURL(blob);
     link.download = 'filled_form.pdf';
     link.click();
+
+    document.getElementById('toggleButton').addEventListener('click', function() {
+        var nameField = document.getElementById('name').parentNode;
+        var emailField = document.getElementById('email').parentNode;
+    
+        if (nameField.style.display === 'none') {
+            nameField.style.display = 'block';
+            emailField.style.display = 'block';
+        } else {
+            nameField.style.display = 'none';
+            emailField.style.display = 'none';
+        }
+    });
 });
