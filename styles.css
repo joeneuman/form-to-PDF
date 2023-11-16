@@ -41,6 +41,17 @@ input[type="submit"]:hover {
     background-color: #256abf;
 }
 
+.center-container {
+    display: flex;
+    justify-content: center; /* centers horizontally */
+}
+
+#toggleButton {
+    cursor: pointer;
+    /* any additional styles for the image */
+}
+
+
 /* Responsive styles */
 @media only screen and (max-width: 768px) {
     form {
