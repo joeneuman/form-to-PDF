@@ -35,15 +35,13 @@ document.getElementById('pdfForm').addEventListener('submit', async function(eve
     
 });
 
-document.getElementById('toggleButton').addEventListener('click', function() {
-    var nameField = document.getElementById('name').parentNode;
-    var emailField = document.getElementById('email').parentNode;
 
-    if (nameField.style.display === 'none') {
-        nameField.style.display = 'block';
-        emailField.style.display = 'block';
+document.getElementById('toggleButton').addEventListener('click', function() {
+    var toggleFields = document.getElementById('toggleFields');
+
+    if (toggleFields.style.display === 'none') {
+        toggleFields.style.display = 'block';
     } else {
-        nameField.style.display = 'none';
-        emailField.style.display = 'none';
+        toggleFields.style.display = 'none';
     }
 });
