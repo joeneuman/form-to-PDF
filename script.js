@@ -36,12 +36,19 @@ document.getElementById('pdfForm').addEventListener('submit', async function(eve
 });
 
 
+
+
 document.getElementById('toggleButton').addEventListener('click', function() {
     var toggleFields = document.getElementById('toggleFields');
+    var toggleButton = document.getElementById('toggleButton');
 
     if (toggleFields.style.display === 'none') {
         toggleFields.style.display = 'block';
+        toggleButton.classList.remove('flipped');
     } else {
         toggleFields.style.display = 'none';
+        toggleButton.classList.add('flipped');
     }
 });
+
+

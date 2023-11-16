@@ -48,8 +48,13 @@ input[type="submit"]:hover {
 
 #toggleButton {
     cursor: pointer;
-    /* any additional styles for the image */
+    
 }
+
+#toggleButton.flipped {
+    transform: rotate(180deg); /* only this property changes when flipped */
+}
+
 
 
 /* Responsive styles */
