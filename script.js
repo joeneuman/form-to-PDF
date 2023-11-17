@@ -57,11 +57,22 @@ var isClosed = toggleFields.style.display === 'none';
 
 
 });
+// Store Values
+document.getElementById('name').addEventListener('change', function() {
+    localStorage.setItem('name', this.value);
+});
+
+document.getElementById('email').addEventListener('change', function() {
+    localStorage.setItem('email', this.value);
+});
+
 
 // On load, check the saved state
 document.addEventListener('DOMContentLoaded', (event) => {
     var toggleFields = document.getElementById('toggleFields');
     var toggleButton = document.getElementById('toggleButton');
+    var savedName = localStorage.getItem('name');
+    var savedEmail = localStorage.getItem('email');
 
     const isClosed = localStorage.getItem('isClosed') === 'true';
 
@@ -72,4 +83,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         toggleFields.style.display = 'block';
         toggleButton.classList.remove('flipped');
     }
+
+    if (savedName) {
+        document.getElementById('name').value = savedName;
+    }
+    if (savedEmail) {
+        document.getElementById('email').value = savedEmail;
+    }
 });
+
+
