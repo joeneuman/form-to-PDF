@@ -35,12 +35,14 @@ document.getElementById('pdfForm').addEventListener('submit', async function(eve
     
 });
 
-
-
-
+// Added for open close funchtion
 document.getElementById('toggleButton').addEventListener('click', function() {
     var toggleFields = document.getElementById('toggleFields');
     var toggleButton = document.getElementById('toggleButton');
+
+// Added isClosed for Saved State
+var isClosed = toggleFields.style.display === 'none';
+
 
     if (toggleFields.style.display === 'none') {
         toggleFields.style.display = 'block';
@@ -49,6 +51,25 @@ document.getElementById('toggleButton').addEventListener('click', function() {
         toggleFields.style.display = 'none';
         toggleButton.classList.add('flipped');
     }
+
+    // Save State
+    localStorage.setItem('isClosed', !isClosed);
+
+
 });
 
+// On load, check the saved state
+document.addEventListener('DOMContentLoaded', (event) => {
+    var toggleFields = document.getElementById('toggleFields');
+    var toggleButton = document.getElementById('toggleButton');
 
+    const isClosed = localStorage.getItem('isClosed') === 'true';
+
+    if (isClosed) {
+        toggleFields.style.display = 'none';
+        toggleButton.classList.add('flipped');
+    } else {
+        toggleFields.style.display = 'block';
+        toggleButton.classList.remove('flipped');
+    }
+});
